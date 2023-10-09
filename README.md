@@ -13,94 +13,94 @@ A simple yet powerful event management system for TypeScript and JavaScript. Man
 
 Using npm:
 
-\```bash
-npm install your-eventemitter-package-name
-\```
+```bash
+npm install react-event-emitter
+```
 
 Using yarn:
 
-\```bash
-yarn add your-eventemitter-package-name
-\```
+```bash
+yarn add react-event-emitter
+```
 
 ## Usage
 
 ### Importing
 
-\```typescript
-import EventEmitter from 'your-eventemitter-package-name';
-\```
+```typescript
+import EventEmitter from 'react-event-emitter';
+```
 
 ### Creating an instance
 
 By default, each EventEmitter instance will have a max listeners limit of 10.
 
-\```typescript
+```typescript
 const emitter = new EventEmitter();
-\```
+```
 
 Or with a custom limit:
 
-\```typescript
+```typescript
 const customEmitter = new EventEmitter(20);
-\```
+```
 
 ### Subscribing to an event
 
-\```typescript
+```typescript
 emitter.on('sayHello', (name: string) => {
   console.log(`Hello, ${name}!`);
 });
-\```
+```
 
 ### Emitting an event
 
-\```typescript
+```typescript
 emitter.emit('sayHello', 'Alice');  // Logs: Hello, Alice!
-\```
+```
 
 ### Unsubscribing from an event
 
-\```typescript
+```typescript
 const myListener = (name: string) => {
   console.log(`Goodbye, ${name}!`);
 };
 
 emitter.on('sayGoodbye', myListener);
 emitter.off('sayGoodbye', myListener);
-\```
+```
 
 ### Wildcard Events
 
 Listen to all events:
 
-\```typescript
+```typescript
 emitter.on('*', (event, ...args) => {
   console.log(`Event "${event}" was emitted with arguments:`, args);
 });
-\```
+```
 
 ### Set Max Listeners
 
 To change the max listeners at runtime:
 
-\```typescript
+```typescript
 emitter.setMaxListeners(50);
-\```
+```
 
 ### Remove All Listeners
 
 Remove all listeners for a specific event:
 
-\```typescript
+```typescript
 emitter.removeAllListeners('eventName');
-\```
+```
 
 Or remove all listeners for all events:
 
-\```typescript
+```typescript
 emitter.removeAllListeners();
-\```
+```
 
 ## API Reference
 
@@ -112,8 +112,8 @@ emitter.removeAllListeners();
 
 ## Contribute
 
-Feel free to dive in! [Open an issue](https://github.com/your-github-username/your-repo-name/issues) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/sinjiprasetio/react-event-emitter/issues) or submit PRs.
 
 ## License
 
-[MIT](LICENSE.md) © [Your Name]
+[MIT](LICENSE.md) © [Sinji Prasetio]
