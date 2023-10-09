@@ -1,15 +1,29 @@
 {
-  "name": "react-event-emitter",
+  "name": "react-event-simple-emitter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple yet powerful event management system for TypeScript and JavaScript.",
   "main": "dist/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinjiprasetio/react-event-emitter.git"
+  },
+  "keywords": [
+    "event",
+    "emitter",
+    "typescript",
+    "event-listener"
+  ],
+  "author": "Sinji Prasetio <sinjiprasetio@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinjiprasetio/react-event-emitter/issues"
+  },
+  "homepage": "https://github.com/sinjiprasetio/react-event-emitter#readme",
   "devDependencies": {
     "@types/node": "^20.8.3",
     "typescript": "^5.2.2"

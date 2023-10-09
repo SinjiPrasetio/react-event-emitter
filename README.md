@@ -14,13 +14,13 @@ A simple yet powerful event management system for TypeScript and JavaScript. Man
 Using npm:
 
 ```
-npm install react-event-emitter
+npm install react-event-simple-emitter
 ```
 
 Using yarn:
 
 ```
-yarn add react-event-emitter
+yarn add react-event-simple-emitter
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ yarn add react-event-emitter
 ### Importing
 
 ```
-import EventEmitter from 'react-event-emitter';
+import EventEmitter from 'react-event-simple-emitter';
 ```
 
 ### Creating an instance

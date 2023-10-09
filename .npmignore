@@ -1,0 +1,23 @@
+# Ignore all tests
+**/*.test.ts
+**/*.test.js
+__tests__/
+
+# Ignore build tools and configuration
+tsconfig.json
+webpack.config.js
+rollup.config.js
+
+# Ignore documentation (usually your README.md is enough on the npm page)
+docs/
+
+# Ignore development files
+node_modules/
+*.log
+
+# Ignore editor files
+*.code-workspace
+.vscode/
+
+# Ignore any secrets or environment files
+.env
