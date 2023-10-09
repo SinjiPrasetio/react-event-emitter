@@ -13,13 +13,13 @@ A simple yet powerful event management system for TypeScript and JavaScript. Man
 
 Using npm:
 
-```bash
+```
 npm install react-event-emitter
 ```
 
 Using yarn:
 
-```bash
+```
 yarn add react-event-emitter
 ```
 
@@ -27,7 +27,7 @@ yarn add react-event-emitter
 
 ### Importing
 
-```typescript
+```
 import EventEmitter from 'react-event-emitter';
 ```
 
@@ -35,19 +35,19 @@ import EventEmitter from 'react-event-emitter';
 
 By default, each EventEmitter instance will have a max listeners limit of 10.
 
-```typescript
+```
 const emitter = new EventEmitter();
 ```
 
 Or with a custom limit:
 
-```typescript
+```
 const customEmitter = new EventEmitter(20);
 ```
 
 ### Subscribing to an event
 
-```typescript
+```
 emitter.on('sayHello', (name: string) => {
   console.log(`Hello, ${name}!`);
 });
@@ -55,13 +55,13 @@ emitter.on('sayHello', (name: string) => {
 
 ### Emitting an event
 
-```typescript
+```
 emitter.emit('sayHello', 'Alice');  // Logs: Hello, Alice!
 ```
 
 ### Unsubscribing from an event
 
-```typescript
+```
 const myListener = (name: string) => {
   console.log(`Goodbye, ${name}!`);
 };
@@ -74,7 +74,7 @@ emitter.off('sayGoodbye', myListener);
 
 Listen to all events:
 
-```typescript
+```
 emitter.on('*', (event, ...args) => {
   console.log(`Event "${event}" was emitted with arguments:`, args);
 });
@@ -84,7 +84,7 @@ emitter.on('*', (event, ...args) => {
 
 To change the max listeners at runtime:
 
-```typescript
+```
 emitter.setMaxListeners(50);
 ```
 
@@ -92,13 +92,13 @@ emitter.setMaxListeners(50);
 
 Remove all listeners for a specific event:
 
-```typescript
+```
 emitter.removeAllListeners('eventName');
 ```
 
 Or remove all listeners for all events:
 
-```typescript
+```
 emitter.removeAllListeners();
 ```
 
