@@ -102,6 +102,59 @@ Or remove all listeners for all events:
 emitter.removeAllListeners();
 ```
 
+### Use case with React components
+
+Consider two React components `ComponentA` and `ComponentB`. To enable communication between them using the event emitter:
+
+**./service/eventEmitter.ts**
+
+```
+import { EventEmitter } from 'path-to-your-event-emitter';
+
+export const sharedEmitter = new EventEmitter();
+```
+
+**ComponentA.tsx**
+
+```
+import React from 'react';
+import { sharedEmitter } from './eventEmitter';
+
+const ComponentA: React.FC = () => {
+  const handleClick = () => {
+    sharedEmitter.emit('someEvent', 'Hello from ComponentA');
+  };
+
+  return <button onClick={handleClick}>Click me</button>;
+};
+```
+
+**ComponentB.tsx**
+
+```
+import React, { useEffect } from 'react';
+import { sharedEmitter } from './eventEmitter';
+
+const ComponentB: React.FC = () => {
+  useEffect(() => {
+    const listener = (message: string) => {
+      console.log(message);
+    };
+
+    sharedEmitter.on('someEvent', listener);
+
+    // Cleanup when component unmounts or if listener changes
+    return () => {
+      sharedEmitter.off('someEvent', listener);
+    };
+  }, []);
+
+  return <div>ComponentB is listening...</div>;
+};
+```
+
+In this setup, when the button in ComponentA is clicked, ComponentB listens to the event and logs the message "Hello from ComponentA".
+
 ## API Reference
 
 - **`on(event: string, listener: Function)`**: Registers a listener for an event.
